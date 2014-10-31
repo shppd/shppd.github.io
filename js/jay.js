@@ -7,9 +7,16 @@ define(["framework7.min"],function() {
 	var mainView = F7.addView('.view-main', {
 		dynamicNavbar: true
 	});
+	
+	var mySlider = F7.slider('.slider-container', {
+		pagination:'.slider-pagination'
+	});
+	
 	return {
 		init	:F7,
 		$7		:$7,
-		mainView:mainView
+		sider	:mySlider,
+		mainView:mainView,
+		page_slider:mySlider
 	}
 });

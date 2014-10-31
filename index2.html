@@ -52,18 +52,35 @@
     		<!-- Pages -->
 			<div class="pages">
 				<div class="navbar">
-					<div class="navbar-inner"></div>
+					<div class="navbar-inner">
+						<!-- We have home navbar without left link-->
+						<div class="left">
+							<a href="#" class="link back">index</a>	
+						</div>
+						<div class="center sliding">sider</div>
+						<div class="right">
+						<!-- Right link contains only icon - additional "icon-only" class--><a href="#" class="link icon-only open-panel"> <i class="icon icon-bars"></i></a>
+						</div>
+					</div>
 				</div>
-				<div class="page navbar-fixed hide-bars-on-scroll">
+				<div data-page="slider" class="page navbar-fixed hide-bars-on-scroll">
 					<div class="page-content">
-					
-					  
+					<!-- 幻灯片 -->
+					  <div class="slider-container">
+						<div class="slider-wrapper">
+						  <div class="slider-slide"><span>Slide 1</span></div>
+						  <div class="slider-slide"><span>Slide 2</span></div>
+						  <div class="slider-slide"><span>Slide 3</span></div>
+						  <div class="slider-slide"><span>Slide 4</span></div>
+						</div>
+						<div class="slider-pagination"></div>
+					  </div>
 					</div>
 				</div>
 			</div>
     		<!-- Bottom Toolbar-->
 			<div class="toolbar">
-			  <div class="toolbar-inner"><a href="index2.html" class="link">sider</a><a href="#" class="link">Link 2</a><a href="#" class="link">Link 3</a><a href="#" class="link">Link 4</a></div>
+			  <div class="toolbar-inner"><a href="#" class="link">Link 1</a><a href="#" class="link">Link 2</a><a href="#" class="link">Link 3</a><a href="#" class="link">Link 4</a></div>
 			</div>
     	</div>
     </div>

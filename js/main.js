@@ -19,28 +19,64 @@ require.config({
 		//'jay'  : {deps: ['swiper','swiperscrollbar']}
 	}
 });
+
+
+
 //加载对应css模块
 require([
 	"css!http://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min",
 	"css!../css/style2"
 ]);
+
+
+
 //配置页面加载模块
 require(['modernizr'],function(modernizr) {
 	!Modernizr.cssanimations?window.location="np.html":'';
 });
 
-require(['jay'], 
-	function (jay){
-		//console.log(jay.init)
-		jay.init;
-		jay.mainView;
-		var $$ = jay.$7;
+
+require(['domReady'], function (domReady) {
+	domReady(function () {
+
+	require(['jay'], 
+		function (jay){
+			var $$ = jay.$7;
+			jay.init;
+			window.mv = jay.mainView;
+			jay.sider;
+			//console.log(jay.$7)
+			//console.log(jay.mainView)
+			mv.router.load({url:"index1.html"})
+			$$(document).on('pageAfterAnimation', function (e) {
+				var name = e.detail.page.name
+				switch(name)
+				{
+				case "home":
+					console.log(name)
+					break;
+				case "slider":
+					jay.page_slider;
+					jay.init.slider('.slider-container', {
+						pagination:'.slider-pagination'
+					});
+					break;
+				default:
+					return;
+				}
+			})		
+		}
+	);
 	
-		console.log(jay.$7)
-		console.log($$("body").html())
-		console.log(jay.mainView)
-	}
-);
+	
+	
+	//@Dom ready
+	});
+});
+
+
+
+
 
 
 
